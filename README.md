@@ -1,6 +1,3 @@
-# HKU5_binder_design
-Computational design and screening of protein binders targeting the HKU5 coronavirus RBD.
-
 # HKU5/MRCoV Miniprotein Binder Design Pipeline
 
 Official implementation of the computational pipeline for **de novo design, screening, and evaluation of miniprotein binders targeting the receptor-binding domains (RBDs) of HKU5-CoV-2 and MRCoV**.
