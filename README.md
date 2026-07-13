@@ -147,14 +147,8 @@ The following metrics are calculated:
 ## Repository Structure
 
 ```
-.
-├── configs/
-├── data/
-├── hotspots/
-├── scripts/
-├── src/
+├── inputs/
 ├── outputs/
-├── examples/
 └── README.md
 ```
 
@@ -162,51 +156,13 @@ The following metrics are calculated:
 
 ## Requirements
 
-- Python ≥ 3.10
 - RFdiffusion
 - ProteinMPNN
-- AlphaFold2
+- AlphaFold3
 - Rosetta
-- CUDA-enabled GPU (recommended)
-
-Install dependencies
-
-```bash
-conda env create -f environment.yml
-conda activate binder_design
-```
 
 ---
 
-## Running the Pipeline
-
-Example:
-
-```bash
-bash scripts/design_pipeline.sh \
-    --target HKU5 \
-    --output results/HKU5
-```
-
-or
-
-```bash
-bash scripts/design_pipeline.sh \
-    --target MRCoV \
-    --output results/MRCoV
-```
-
----
-
-## Citation
-
-If you use this repository in your research, please cite:
-
-```
-Citation information will be added after publication.
-```
-
----
 
 ## License
 
