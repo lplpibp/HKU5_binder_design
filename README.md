@@ -127,7 +127,7 @@ Only models with good iPTM were retained for downstream analysis.
 
 ### Step 5. Interface Evaluation
 
-Evaluate binding interfaces using Rosetta (beta_nov16 energy function).
+Evaluate binding interfaces using Rosetta.
 
 ```bash
 bash scripts/run_relax_interface.sh
