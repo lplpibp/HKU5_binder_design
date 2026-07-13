@@ -48,17 +48,25 @@ The pipeline uses experimentally determined ACE2-bound RBD structures as design 
 | HKU5-CoV-2 | 9JJ6 |
 | MRCoV | 8ZWE |
 
-Critical interface hotspot residues were identified from these co-crystal structures and used as target epitopes during binder design.
+1) Remove the receptor chain from the PDB structure.
+2) Model and reconstruct the missing loop regions to complete the protein structure.
+3) Renumber the RBD residues starting from 1.
+4) Identify critical interface hotspot residues.
 
 ### Step 2. Backbone Generation
 
 Generate diverse de novo binder backbones using RFdiffusion.
 
 ```bash
-bash scripts/run_rfdiffusion.sh \
-    --target data/HKU5_RBD.pdb \
-    --hotspots hotspots/hku5.txt \
-    --output outputs/rfdiffusion
+conda activate SE3nv
+python /path/to/your/RFdiffusion/scripts/run_inference.py  \
+'contigmap.contigs=[B1-181/0 100-110]' \
+'ppi.hotspot_res=[B156]' \
+inference.output_prefix=binder\HKU5_CoV_2 \
+inference.input_pdb=1441.pdb \
+inference.num_designs=50 \
+inference.deterministic=True \
+inference.design_startnum=1
 ```
 
 ---
