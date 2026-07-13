@@ -59,7 +59,8 @@ Generate diverse de novo binder backbones using RFdiffusion.
 
 ```bash
 conda activate SE3nv
-
+```
+```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
 'contigmap.contigs=[B1-181/0 100-110]' \
 'ppi.hotspot_res=[B156]' \
