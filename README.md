@@ -110,14 +110,7 @@ python /path/to/your/ProteinMPNN-main/protein_mpnn_run.py   \
 
 ### Step 4. Structure Prediction
 
-Predict binder structures using AlphaFold2.
-
-```bash
-bash scripts/run_alphafold.sh \
-    --input outputs/mpnn \
-    --output outputs/alphafold
-```
-
+Predict binder structures using AlphaFold3.
 Only models with the highest confidence (pLDDT) were retained for downstream analysis.
 
 ---
