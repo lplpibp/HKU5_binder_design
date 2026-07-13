@@ -62,7 +62,7 @@ conda activate SE3nv
 ```
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
-'contigmap.contigs=[B1-181/0 100-110]' \
+'contigmap.contigs=[B1-181/0 50-100]' \
 'ppi.hotspot_res=[B156]' \
 inference.output_prefix=binder\1441 \
 inference.input_pdb=1441.pdb \
