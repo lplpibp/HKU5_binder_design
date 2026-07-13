@@ -1,28 +1,11 @@
 #!/bin/bash
-
-# ==============================
-# 用户需要修改的参数
-# ==============================
-
-ROSETTA_BIN="/home/lthpc/softwares/rosetta.source.release-371/main/source/bin/rosetta_scripts.default.linuxgccrelease"
-
-INPUT_PDB="4m_hACE2-apo.pdb"
-
+ROSETTA_BIN="/path/to/your/rosetta/main/source/bin/rosetta_scripts.default.linuxgccrelease"
+INPUT_PDB="your.pdb"
 XML_FILE="relax_interface.xml"
-
 OUTPUT_DIR="rosetta_interface_results"
-
 NSTRUCT=1
 
-# ==============================
-# 创建输出目录
-# ==============================
-
 mkdir -p "${OUTPUT_DIR}"
-
-# ==============================
-# 运行Rosetta
-# ==============================
 
 "${ROSETTA_BIN}" \
     -s "${INPUT_PDB}" \
@@ -41,6 +24,6 @@ mkdir -p "${OUTPUT_DIR}"
     -ex2aro \
     -overwrite
 
-echo "Rosetta计算完成。"
-echo "结构文件：${OUTPUT_DIR}"
-echo "打分文件：${OUTPUT_DIR}/interface_score.sc"
+echo "Rosetta complete!"
+echo "PDB files：${OUTPUT_DIR}"
+echo "Score files：${OUTPUT_DIR}/interface_score.sc"
