@@ -121,7 +121,7 @@ python /path/to/your/ProteinMPNN-main/protein_mpnn_run.py   \
 ### Step 4. Structure Prediction
 
 Predict binder structures using AlphaFold3.
-Only models with the highest confidence (pLDDT) were retained for downstream analysis.
+Only models with good iPTM were retained for downstream analysis.
 
 ---
 
@@ -130,9 +130,7 @@ Only models with the highest confidence (pLDDT) were retained for downstream ana
 Evaluate binding interfaces using Rosetta (beta_nov16 energy function).
 
 ```bash
-bash scripts/run_rosetta.sh \
-    --input outputs/alphafold \
-    --output outputs/rosetta
+bash scripts/run_relax_interface.sh
 ```
 
 The following metrics are calculated:
@@ -149,6 +147,7 @@ The following metrics are calculated:
 ```
 ├── inputs/
 ├── outputs/
+├── scripts/
 └── README.md
 ```
 
