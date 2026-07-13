@@ -60,7 +60,7 @@ Generate diverse de novo binder backbones using RFdiffusion.
 ```bash
 conda activate SE3nv
 ```
-for 1441, please run:
+For 1441, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
 'contigmap.contigs=[B1-181/0 50-100]' \
@@ -70,7 +70,7 @@ inference.input_pdb=1441.pdb \
 inference.num_designs=500 \
 inference.design_startnum=1
 ```
-for MRCoV, please run:
+For MRCoV, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
 'contigmap.contigs=[B1-201/0 50-100]' \
