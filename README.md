@@ -45,7 +45,7 @@ The pipeline uses experimentally determined ACE2-bound RBD structures as design 
 
 | Virus | PDB ID |
 |--------|--------|
-| HKU5-CoV-2 | 9JJ6 |
+| HKU5-CoV-2 (or 1441)| 9JJ6 |
 | MRCoV | 8ZWE |
 
 1) Remove the receptor chain from the PDB structure.
