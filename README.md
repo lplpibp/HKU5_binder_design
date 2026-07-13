@@ -17,30 +17,19 @@ The design strategy integrates recent advances in generative protein design, seq
 The complete workflow consists of the following steps:
 
 ```
-ACE2–RBD Complex Structures
+Input Structures
         │
         ▼
-Hotspot Identification
-        │
-        ▼
-RFdiffusion
 Backbone Generation
         │
         ▼
-ProteinMPNN
 Sequence Design
         │
         ▼
-AlphaFold2
 Structure Prediction
         │
         ▼
-Rosetta
 Interface Evaluation
-        │
-        ▼
-Multi-parameter Filtering
-(pLDDT + RMSD + Interface Score + Contact Surface Area)
         │
         ▼
 Experimental Candidates
@@ -48,7 +37,9 @@ Experimental Candidates
 
 ---
 
-## Input Structures
+## Workflow
+
+### Step 1. Input Structures
 
 The pipeline uses experimentally determined ACE2-bound RBD structures as design templates.
 
@@ -59,11 +50,7 @@ The pipeline uses experimentally determined ACE2-bound RBD structures as design 
 
 Critical interface hotspot residues were identified from these co-crystal structures and used as target epitopes during binder design.
 
----
-
-## Workflow
-
-### Step 1. Backbone Generation
+### Step 2. Backbone Generation
 
 Generate diverse de novo binder backbones using RFdiffusion.
 
@@ -76,7 +63,7 @@ bash scripts/run_rfdiffusion.sh \
 
 ---
 
-### Step 2. Sequence Design
+### Step 3. Sequence Design
 
 Optimize amino acid sequences using ProteinMPNN.
 
@@ -88,7 +75,7 @@ bash scripts/run_proteinmpnn.sh \
 
 ---
 
-### Step 3. Structure Prediction
+### Step 4. Structure Prediction
 
 Predict binder structures using AlphaFold2.
 
@@ -102,7 +89,7 @@ Only models with the highest confidence (pLDDT) were retained for downstream ana
 
 ---
 
-### Step 4. Rosetta Interface Evaluation
+### Step 5. Interface Evaluation
 
 Evaluate binding interfaces using Rosetta (beta_nov16 energy function).
 
@@ -118,23 +105,6 @@ The following metrics are calculated:
 - Contact Molecular Surface Area
 - Shape Complementarity
 - Interface Energy
-
----
-
-### Step 5. Candidate Filtering
-
-Candidate binders are selected using multiple structural criteria.
-
-Current filtering thresholds include:
-
-| Metric | Threshold |
-|---------|-----------|
-| Contact Molecular Surface Area | > 382 Å² |
-| Rosetta Interface Score | < -394 REU |
-| AlphaFold2 pLDDT | Highest confidence |
-| RMSD | Lowest structural deviation |
-
-Only candidates satisfying all criteria are retained for experimental validation.
 
 ---
 
