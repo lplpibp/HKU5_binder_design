@@ -155,10 +155,10 @@ The following metrics are calculated:
 
 ## Requirements
 
-- RFdiffusion
+- RFdiffusion v1.1.0
 - ProteinMPNN
 - AlphaFold3
-- Rosetta
+- Rosetta v2024.09+release.06b3cf8
 
 ---
 
