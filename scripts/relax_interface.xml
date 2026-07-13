@@ -1,0 +1,46 @@
+<ROSETTASCRIPTS>
+
+    <SCOREFXNS>
+        <ScoreFunction name="ref2015" weights="ref2015"/>
+    </SCOREFXNS>
+
+    <TASKOPERATIONS>
+        <InitializeFromCommandline name="init"/>
+        <IncludeCurrent name="include_current"/>
+        <RestrictToRepacking name="repack_only"/>
+    </TASKOPERATIONS>
+
+    <MOVERS>
+
+
+        <FastRelax
+            name="relax"
+            scorefxn="ref2015"
+            repeats="5"
+            cartesian="false"
+            task_operations="init,include_current,repack_only"
+        />
+
+
+        <InterfaceAnalyzerMover
+            name="interface_analysis"
+            scorefxn="ref2015"
+            interface="A_B"
+            pack_input="true"
+            pack_separated="true"
+            packstat="true"
+            interface_sc="true"
+            tracer="false"
+            use_jobname="true"
+        />
+
+    </MOVERS>
+
+    <PROTOCOLS>
+        <Add mover="relax"/>
+        <Add mover="interface_analysis"/>
+    </PROTOCOLS>
+
+    <OUTPUT scorefxn="ref2015"/>
+
+</ROSETTASCRIPTS>
