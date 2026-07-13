@@ -66,8 +66,7 @@ python /path/to/your/RFdiffusion/scripts/run_inference.py  \
 'ppi.hotspot_res=[B156]' \
 inference.output_prefix=binder\1441 \
 inference.input_pdb=1441.pdb \
-inference.num_designs=50 \
-inference.deterministic=True \
+inference.num_designs=500 \
 inference.design_startnum=1
 ```
 
@@ -78,11 +77,35 @@ inference.design_startnum=1
 Optimize amino acid sequences using ProteinMPNN.
 
 ```bash
-bash scripts/run_proteinmpnn.sh \
-    --input outputs/rfdiffusion \
-    --output outputs/mpnn
+mkdir mpnn_input
 ```
-
+```bash
+cp 1441_x.pdb mpnn_input
+```
+```bash
+conda activate mlfold
+```
+```bash
+python /path/to/your/ProteinMPNN-main/helper_scripts/parse_multiple_chains.py \
+--input_path mpnn_input   \
+--output_path parsed_pdbs.jsonl
+```
+```bash
+python /path/to/your/ProteinMPNN-main/helper_scripts/assign_fixed_chains.py   \
+--input_path parsed_pdbs.jsonl   \
+--output_path assigned_pdbs.jsonl   \
+--chain_list "A"
+```
+```bash
+python /path/to/your/ProteinMPNN-main/protein_mpnn_run.py   \
+--jsonl_path parsed_pdbs.jsonl   \
+--chain_id_jsonl assigned_pdbs.jsonl   \
+--out_folder mpnn_output   \
+--num_seq_per_target 10   \
+--sampling_temp "0.1"   \
+--seed 37   \
+--batch_size 1
+```
 ---
 
 ### Step 4. Structure Prediction
