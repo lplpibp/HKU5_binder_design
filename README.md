@@ -63,7 +63,7 @@ conda activate SE3nv
 For 1441, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
-'contigmap.contigs=[B1-181/0 50-100]' \
+'contigmap.contigs=[B1-181/0 50-150]' \
 'ppi.hotspot_res=[B156]' \
 inference.output_prefix=binder\1441 \
 inference.input_pdb=1441.pdb \
@@ -73,7 +73,7 @@ inference.design_startnum=1
 For MRCoV, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
-'contigmap.contigs=[B1-201/0 50-100]' \
+'contigmap.contigs=[B1-201/0 50-150]' \
 'ppi.hotspot_res=[B169]' \
 inference.output_prefix=binder\MRCoV \
 inference.input_pdb=MRCoV.pdb.pdb \
