@@ -120,14 +120,14 @@ python /path/to/your/ProteinMPNN-main/protein_mpnn_run.py   \
 
 ### Step 4. Structure Prediction
 
-Predict binder structures using AlphaFold3.
-Only models with good iPTM were retained for downstream analysis.
+Predict binder structures using AlphaFold2.
+Only models with good pLDDT scores were retained for downstream analysis.
 
 ---
 
 ### Step 5. Interface Evaluation
 
-Evaluate binding interfaces using Rosetta.
+Evaluate binding interfaces using Rosetta. (beta_nov16 energy function)
 
 ```bash
 bash scripts/run_relax_interface.sh
@@ -137,9 +137,8 @@ The following metrics are calculated:
 
 - Rosetta Interface Score
 - Contact Molecular Surface Area
-- Shape Complementarity
-- Interface Energy
 
+Candidates were filtered against dual-stringency thresholds, empirically set at a contact molecular surface area ＞ 382Å and a Rosetta interface score ＜-394  (Rosetta Energy Units)
 ---
 
 ## Repository Structure
