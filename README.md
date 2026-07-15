@@ -121,7 +121,7 @@ python /path/to/your/ProteinMPNN-main/protein_mpnn_run.py   \
 ### Step 4. Structure Prediction
 
 Predict binder structures using AlphaFold2.
-Only models with good pLDDT scores were retained for downstream analysis.
+Only the top-ranked models with the highest pLDDT scores were retained for downstream analysis.
 
 ---
 
