@@ -151,7 +151,7 @@ Candidates were filtered against dual-stringency thresholds, empirically set at 
 
 - RFdiffusion v1.1.0
 - ProteinMPNN
-- AlphaFold3
+- AlphaFold2
 - Rosetta v2024.09+release.06b3cf8
 
 ---
