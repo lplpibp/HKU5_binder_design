@@ -1,7 +1,7 @@
 <ROSETTASCRIPTS>
 
     <SCOREFXNS>
-        <ScoreFunction name="ref2015" weights="ref2015"/>
+        <ScoreFunction name="beta_nov16" weights="beta_nov16"/>
     </SCOREFXNS>
 
     <TASKOPERATIONS>
@@ -12,19 +12,17 @@
 
     <MOVERS>
 
-
         <FastRelax
             name="relax"
-            scorefxn="ref2015"
+            scorefxn="beta_nov16"
             repeats="5"
             cartesian="false"
             task_operations="init,include_current,repack_only"
         />
 
-
         <InterfaceAnalyzerMover
             name="interface_analysis"
-            scorefxn="ref2015"
+            scorefxn="beta_nov16"
             interface="A_B"
             pack_input="true"
             pack_separated="true"
@@ -41,6 +39,6 @@
         <Add mover="interface_analysis"/>
     </PROTOCOLS>
 
-    <OUTPUT scorefxn="ref2015"/>
+    <OUTPUT scorefxn="beta_nov16"/>
 
 </ROSETTASCRIPTS>
