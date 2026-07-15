@@ -132,12 +132,8 @@ Evaluate binding interfaces using Rosetta. (beta_nov16 energy function)
 ```bash
 bash scripts/run_relax_interface.sh
 ```
-
-The following metrics are calculated:
-
-- Rosetta Interface Score
-- Contact Molecular Surface Area
 Candidates were filtered against dual-stringency thresholds, empirically set at a contact molecular surface area ＞ 382Å and a Rosetta interface score ＜-394  (Rosetta Energy Units)
+
 ---
 
 ## Repository Structure
