@@ -84,7 +84,7 @@ inference.design_startnum=1
 
 ### Step 3. Sequence Design
 
-Optimize amino acid sequences using ProteinMPNN.
+Optimize amino acid sequences for 1441 binders using ProteinMPNN. (The same parameters for MRCoV binders)
 
 ```bash
 mkdir mpnn_input
