@@ -63,8 +63,8 @@ conda activate SE3nv
 For 1441, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
-'contigmap.contigs=[B1-181/0 50-150]' \
-'ppi.hotspot_res=[B156]' \
+'contigmap.contigs=[B1-181/0 56-100]' \
+'ppi.hotspot_res=[B77, B81, B115, B154, B156]' \
 inference.output_prefix=binder\1441 \
 inference.input_pdb=1441.pdb \
 inference.num_designs=500 \
@@ -73,8 +73,8 @@ inference.design_startnum=1
 For MRCoV, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
-'contigmap.contigs=[B1-201/0 50-150]' \
-'ppi.hotspot_res=[B169]' \
+'contigmap.contigs=[B1-201/0 56-100]' \
+'ppi.hotspot_res=[B87, B124, B133, B135, B167, B169]' \
 inference.output_prefix=binder\MRCoV \
 inference.input_pdb=MRCoV.pdb.pdb \
 inference.num_designs=500 \
@@ -111,17 +111,17 @@ python /path/to/your/ProteinMPNN-main/protein_mpnn_run.py   \
 --jsonl_path parsed_pdbs.jsonl   \
 --chain_id_jsonl assigned_pdbs.jsonl   \
 --out_folder mpnn_output   \
---num_seq_per_target 10   \
+--num_seq_per_target 200   \
 --sampling_temp "0.1"   \
---seed 37   \
---batch_size 1
+--seed 0   \
+--batch_size 100
 ```
 ---
 
 ### Step 4. Structure Prediction
 
-Predict binder structures using AlphaFold2.
-Only the top-ranked models with the highest pLDDT scores were retained for downstream analysis.
+Predict binder structures using AlphaFold2.3.1.
+Models with the highest pLDDT scores were retained for downstream analysis.
 
 ---
 
