@@ -63,10 +63,10 @@ conda activate SE3nv
 For 1441, please run:
 ```bash
 python /path/to/your/RFdiffusion/scripts/run_inference.py  \
-'contigmap.contigs=[B1-181/0 56-100]' \
-'ppi.hotspot_res=[B77, B81, B115, B154, B156]' \
+'contigmap.contigs=[B1-190/0 56-100]' \
+'ppi.hotspot_res=[B80, B84, B118, B157, B159]' \
 inference.output_prefix=binder\1441 \
-inference.input_pdb=1441.pdb \
+inference.input_pdb=HKU5-CoV-2(1441).pdb \
 inference.num_designs=500 \
 inference.design_startnum=1
 ```
